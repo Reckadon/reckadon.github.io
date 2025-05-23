@@ -1,0 +1,18 @@
+---
+import FormattedDate from './FormattedDate.astro';
+import type { CollectionEntry } from 'astro:content';
+import { render } from 'astro:content';
+
+type NewsPost = CollectionEntry<'news'>;
+const { news }: Record<string, any> | { news: NewsPost } = Astro.props;
+const { Content, headings } = await render(news);
+---
+
+<div class='flex gap-3 sm:gap-10 items-center border-l py-2.5 ml-12 sm:ml-0 dark:border-b-zinc-700'>
+	<div class='text-zinc-700 text-sm w-24 dark:text-zinc-300 shrink-0 bg-zinc-100 dark:bg-zinc-800 rounded-lg p-2 -ml-12'>
+		<FormattedDate date={news.data.pubDate} />
+	</div>
+	<h3 class='font-sm'>
+		<Content />
+	</h3>
+</div>

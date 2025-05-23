@@ -6,4 +6,13 @@
 	code {
 		font-size: 0.875rem;
 	}
+
+	em {
+		font-style: normal;
+		.dark & {
+			color: aqua;
+		}
+		color: #ff501b;
+		font-weight: 500;
+	}
 }
