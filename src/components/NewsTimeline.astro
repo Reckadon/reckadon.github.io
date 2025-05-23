@@ -6,7 +6,7 @@ type NewsPost = CollectionEntry<'news'>;
 const { news , has_side} = Astro.props;
 ---
 
-<section class=`flex flex-col sm:flex-row pb-2 ${has_side && 'border-b'} ${!has_side && 'justify-center'} mb-5 dark:border-b-zinc-700`>
+<section class=`flex flex-col sm:flex-row pb-2 ${!has_side && 'justify-center'} mb-5 dark:border-b-zinc-700`>
 	{has_side && <div class=`flex grow items-center`>
 		<h2 class=`text-xl font-bold ml-8 mb-1 sm:mb-0`>News</h2>
 	</div>}
