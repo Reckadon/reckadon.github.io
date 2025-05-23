@@ -16,3 +16,8 @@
 		font-weight: 500;
 	}
 }
+
+:root {
+	--accent-color: #ff501b;
+	--accent-color-dark: #00ffff;
+}
