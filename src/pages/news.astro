@@ -1,0 +1,23 @@
+---
+import NewsTimeline from '@src/components/NewsTimeline.astro';
+import { SITE_TITLE } from '@src/consts';
+import BaseLayout from '@src/layouts/BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+
+const title = 'All news';
+const description = "News and Updates about my projects, activities and life.";
+
+type NewsPost = CollectionEntry<'news'>;
+const news = (await getCollection('news')).sort((a: NewsPost, b: NewsPost) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={SITE_TITLE + ' - News'} description={description}>
+	<div class='container'>
+		<div class='mb-10'>
+			<h1 class='text-3xl font-bold mb-2'>{title}</h1>
+			<p class='text-zinc-700 dark:text-zinc-300 text-lg'>{description}</p>
+		</div>
+		<NewsTimeline news={news} />
+	</div>
+</BaseLayout>

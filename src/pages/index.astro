@@ -10,7 +10,7 @@ import ProjectList from '../components/ProjectList.astro';
 import PostItem from '../components/PostItem.astro';
 import Intro, { frontmatter } from './intro.mdx';
 import IntroLinks from '@src/components/IntroLinks.astro';
-import NewsItem from '@src/components/NewsItem.astro';
+import NewsTimeline from '@src/components/NewsTimeline.astro';
 
 type BlogPost = CollectionEntry<'blog'>;
 const top6Projects = projects.slice(0, 6);
@@ -35,15 +35,7 @@ const news = (await getCollection('news'))
 		<IntroLinks />
 		<main>
 			<div class='mt-6 mb-12'>
-				<section class='flex flex-col sm:flex-row pb-2 border-b mb-5 dark:border-b-zinc-700'>
-					<div class='flex grow items-center'>
-						<h2 class='text-xl font-bold ml-6 mb-1 sm:mb-0'>News</h2>
-					</div>
-					<div class='flex flex-col w-full sm:w-[75%]'>
-						<!-- <a href='/news/' class='py-1 self-end underline dark:prose-invert'>See all &raquo;</a> -->
-						{news.map((news: NewsPost) => <NewsItem news={news} />)}
-					</div>
-				</section>
+				<NewsTimeline news={news} has_side />
 				<div class='flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700'>
 					<h2 class='text-lg font-bold mb-3'>Recent Posts</h2>
 					<a href='/posts/' class='inline-block py-2 underline dark:prose-invert'>All posts &raquo;</a>

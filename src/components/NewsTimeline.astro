@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import NewsItem from './NewsItem.astro';
+type NewsPost = CollectionEntry<'news'>;
+
+const { news , has_side} = Astro.props;
+---
+
+<section class=`flex flex-col sm:flex-row pb-2 ${has_side && 'border-b'} ${!has_side && 'justify-center'} mb-5 dark:border-b-zinc-700`>
+	{has_side && <div class=`flex grow items-center`>
+		<h2 class=`text-xl font-bold ml-8 mb-1 sm:mb-0`>News</h2>
+	</div>}
+	<div class='flex flex-col w-full sm:w-[75%]'>
+		{news.map((news: NewsPost) => <NewsItem news={news} />)}
+		{has_side && <a href='/news/' class='py-1 ml-5 sm:-ml-7 self-start underline dark:prose-invert'>See all &raquo;</a>}
+	</div>
+</section>
