@@ -4,35 +4,45 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@src/layouts/BaseLayout.astro';
 import { slugify, unslugify } from '@src/utils';
 import PostsByYear from '@src/components/PostsByYear.astro';
+import { projects } from '@src/pages/projects/projects';
+import ProjectList from '@src/components/ProjectList.astro';
 
 type BlogPost = CollectionEntry<'blog'>;
 export const getStaticPaths = async () => {
 	const allPosts: BlogPost[] = await getCollection('blog');
-	return [
-		...new Set(
-			allPosts
-				.map((post) => post.data.tags)
-				.flat()
-				.filter((tag) => !!tag)
-		)
-	].map((tag) => ({ params: { tag: slugify(tag || '') } }));
+	const blogTags = new Set(
+		allPosts
+			.map((post) => post.data.tags)
+			.flat()
+			.filter((tag) => !!tag)
+	);
+	const projectTags = new Set(projects.flatMap((project) => project.tags || []));
+	return [...new Set([...blogTags, ...projectTags])].map((tag) => ({ params: { tag: slugify(tag || '') } }));
 };
 
 const { tag } = Astro.params;
 const allPosts: BlogPost[] = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const allProjects = projects;
 const taggedPosts = allPosts.filter((post) => post.data.tags?.map((tag) => slugify(tag)).includes(tag || ''));
-const title = `All Posts Tagged with ${unslugify(tag || '')}`;
-const description = `All Posts Tagged with ${unslugify(tag || '')}`;
+const taggedProjects = allProjects.filter((project) => project.tags?.map((tag) => slugify(tag)).includes(tag || ''));
+const title = `All Posts and Projects Tagged with '${unslugify(tag || '')}'`;
+const description = `All Posts and Projects Tagged with ${unslugify(tag || '')}`;
 ---
 
-<BaseLayout
-	title={title}
-	description={description}
->
-  <div class='container'>
-    <div class="mb-10">
-      <h1 class="text-3xl font-bold mb-2">{title}</h1>
-    </div>
-    <PostsByYear posts={taggedPosts}/>
-  </div>
+<BaseLayout title={title} description={description}>
+	<div class='container'>
+		<div class='mb-10'>
+			<h1 class='text-3xl font-bold mb-2'>{title}</h1>
+		</div>
+		<PostsByYear posts={taggedPosts} />
+		<p class='text-xl mb-2 text-zinc-700 dark:text-zinc-300'><strong>Projects</strong></p>
+		<ProjectList projects={taggedProjects} title={`Projects Tagged with ${unslugify(tag || '')}`} />
+		{
+			taggedPosts.length === 0 && taggedProjects.length === 0 && (
+				<p class='text-zinc-700 dark:text-zinc-300'>
+					No posts or projects found with the tag <strong>{unslugify(tag || '')}</strong>.
+				</p>
+			)
+		}
+	</div>
 </BaseLayout>

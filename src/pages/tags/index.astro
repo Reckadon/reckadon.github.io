@@ -3,6 +3,8 @@ import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 import BaseLayout from '@src/layouts/BaseLayout.astro';
 import { slugify } from '@src/utils';
+import { SITE_TITLE } from '@src/consts';
+import { projects } from '../projects/projects';
 
 type BlogPost = CollectionEntry<'blog'>;
 interface Tag {
@@ -46,12 +48,29 @@ for (const post of allPosts) {
 		}
 	}
 }
+const allProjects = projects;
+for (const project of allProjects) {
+  for (const tag of project.tags || []) {
+    const tagValue = slugify(tag);
+    if (mappedTags[tagValue]) {
+      mappedTags[tagValue].postCount += 1;
+    } else {
+      const _tag: Tag = {
+        value: tagValue,
+        label: tag,
+        postCount: 1
+      };
+      mappedTags[tagValue] = _tag;
+    }
+  }
+}
+
 const groupedTags  = groupTagsByFirstLetter(Object.values(mappedTags))
 const title = `All Tags`;
-const description = 'Post tags: concise keywords categorizing content for easy navigation and improved searchability'
+const description = 'All my Projects and Posts, categorized by Tags.'
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={SITE_TITLE + ' - ' + title} description={description}>
 	<div class='container'>
     <div class="mb-10">
       <h1 class="text-3xl font-bold mb-2">{title}</h1>
