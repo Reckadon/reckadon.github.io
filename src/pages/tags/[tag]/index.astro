@@ -4,7 +4,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '@src/layouts/BaseLayout.astro';
 import { slugify, unslugify } from '@src/utils';
 import PostsByYear from '@src/components/PostsByYear.astro';
-import { projects } from '@src/pages/projects/projects';
+import { projects } from '@src/content/projects';
 import ProjectList from '@src/components/ProjectList.astro';
 
 type BlogPost = CollectionEntry<'blog'>;
