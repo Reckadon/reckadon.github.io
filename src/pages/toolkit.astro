@@ -1,0 +1,72 @@
+---
+import { SITE_TITLE } from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title={SITE_TITLE + ' - Toolkit'}
+	description='A collection of software tools, hardware and other resources that I use in my daily life.'
+>
+	<div class='container'>
+		<div class='mb-10'>
+			<h1 class='text-3xl font-bold mb-2'>My Toolkit</h1>
+			<p class='text-zinc-700 dark:text-zinc-300 text-lg'>
+				A collection of software tools and other resources that I use in my daily life.
+			</p>
+		</div>
+		<div class='mb-8'>
+			<h2 class='text-2xl font-bold mb-4'>Reading and Research</h2>
+			<div>
+				<ul class='list-disc pl-6'>
+					<li class='mb-1'>
+						<em><a class='hover:underline' target='_blank' href='https://www.zotero.org/'>Zotero</a></em> - free, open-source and easy-to-use
+						tool to help me collect, organize, annotate and share my research and reading materials.
+					</li>
+					<li class='mb-1'>
+						<em><a class='hover:underline' target='_blank' href='https://researchrabbitapp.com/home'>ResearchRabbit</a></em> - a research tool
+						to help me go down the rabbit hole by finding papers related to my current collection of papers. Connects with Zotero as well!
+					</li>
+				</ul>
+			</div>
+			<h2 class='text-2xl font-bold mb-4 mt-6'>Development</h2>
+			<div>
+				<ul class='list-disc pl-6'>
+					<li class='mb-1'>
+						<em><a class='hover:underline' target='_blank' href='https://code.visualstudio.com/'>VS Code</a></em> - my primary code editor for
+						dev projects, with a lot of extensions to enhance my productivity.
+					</li>
+					<li class='mb-1'>
+						<em><a class='hover:underline' target='_blank' href='https://www.jetbrains.com/idea/'>IntelliJ</a></em> - my primary IDE for Java
+						and Android development, feels at home with its seamless features and beautiful UI.
+					</li>
+					<li class='mb-1'>
+						<em><a class='hover:underline' target='_blank' href='https://www.virtualbox.org/'>Oracle VirtualBox</a></em> - a free and open-source
+						virtualization software that allows me to run multiple operating systems on my computer, useful for testing and development.
+					</li>
+				</ul>
+			</div>
+			<h2 class='text-2xl font-bold mb-4 mt-6'>Design and Planning</h2>
+			<div>
+				<ul class='list-disc pl-6'>
+					<li class='mb-1'>
+						<em><a class='hover:underline' target='_blank' href='https://excalidraw.com/'>Excalidraw</a></em> - a virtual whiteboard tool that
+						I use for sketching, brainstorming and visualizing ideas, with a simple UI and collaborative features.
+					</li>
+					<li class='mb-1'>
+						<em><a class='hover:underline' target='_blank' href='https://www.canva.com/'>Canva</a></em> - a graphic design platform that I use
+						for making presentations and posters.
+					</li>
+				</ul>
+				<h2 class='text-2xl font-bold mb-4 mt-6'>Utilities</h2>
+				<div>
+					<ul class='list-disc pl-6'>
+						<li class='mb-1'>
+							<em><a class='hover:underline' target='_blank' href='https://www.voidtools.com/'>Everything Search</a></em> - a free and fast file
+							search tool for Windows, which allows me to quickly find files and folders on my computer, just by typing their names.
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</BaseLayout>

@@ -58,7 +58,7 @@ export const projects: Project[] = [
 		description: 'A Firebase-backed Native Android math game with difficulty levels, a live leaderboard, and a responsive UI.',
 		demoLink: 'https://github.com/Reckadon/MathTrainerGame/releases',
 		demoLinkRel: 'nofollow noopener noreferrer',
-		tags: ['Firebase', 'Android', 'Game']
+		tags: ['Firebase', 'Android', 'Java']
 	},
 	{
 		...(await getRepositoryDetails('Reckadon/HackRush-CollegeHub')),
