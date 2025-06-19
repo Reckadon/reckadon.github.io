@@ -30,7 +30,7 @@ const news = (await getCollection('news'))
 				<h1 class='text-4xl font-bold mb-1'>{frontmatter.name}</h1>
 				<Intro />
 			</div>
-			<Image src={Ava} alt={frontmatter.name} width={300} loading='eager' class='rounded-2xl rotate-2 mx-4 md:mx-0' />
+			<Image src={Ava} alt={frontmatter.name} width={300} loading='eager' class='rounded-2xl sm:rotate-2 mx-auto md:mx-0' />
 		</div>
 		<IntroLinks />
 		<main>

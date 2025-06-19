@@ -3,7 +3,7 @@ import SquareLine from './square-line.astro';
 ---
 
 <div class='absolute w-full h-full' style='z-index:-1'>
-	<div class='absolute top-0 left-0 w-full sm:w-1/2 h-auto bg-neutral-200 dark:bg-neutral-500'>
+	<div class='absolute top-0 left-0 w-full sm:w-1/2 h-auto bg-neutral-200 dark:bg-neutral-500 hidden sm:block'>
 		<div
 			class='absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tl from-white dark:from-zinc-900 from-50% via-90% to-100% via-transparent to-transparent'
 		>
@@ -22,7 +22,7 @@ import SquareLine from './square-line.astro';
 
 	<div class='absolute top-0 right-0 w-full sm:w-1/2 h-auto bg-neutral-200 dark:bg-neutral-500'>
 		<div
-			class='absolute inset-0 z-30 w-full h-full pointer-events-none bg-gradient-to-tr from-white dark:from-zinc-900 from-50% via-90% to-100% via-transparent to-transparent'
+			class='absolute inset-0 z-30 w-full h-[102%] sm:h-auto pointer-events-none bg-gradient-to-tr from-white dark:from-zinc-900 from-50% via-90% to-100% via-transparent to-transparent'
 		>
 		</div>
 		<div
