@@ -34,10 +34,10 @@ const news = (await getCollection('news'))
 		</div>
 		<IntroLinks />
 		<main>
-			<div class='mt-6 mb-12'>
-				<NewsTimeline news={news} has_side />
+			<NewsTimeline news={news} has_side />
+			<div class='mt-[7vh]'>
 				<div class='flex justify-between gap-2 border-b mb-1 dark:border-b-zinc-700'>
-					<h2 class='text-lg font-bold mb-3'>Recent Posts</h2>
+					<h2 class='text-xl font-bold mb-3'>Recent Posts</h2>
 					<a href='/posts/' class='inline-block py-2 underline dark:prose-invert'>All posts &raquo;</a>
 				</div>
 				<div>
@@ -45,9 +45,9 @@ const news = (await getCollection('news'))
 				</div>
 				<div class='text-right'></div>
 			</div>
-			<div>
+			<div class="mt-[7vh]">
 				<div class='flex justify-between gap-2 mb-1'>
-					<h2 class='text-lg font-bold mb-3'>Some Projects</h2>
+					<h2 class='text-xl font-bold mb-3'>Some Projects</h2>
 					<a href='/projects/' class='inline-block py-2 underline dark:prose-invert'>All projects &raquo;</a>
 				</div>
 				<ProjectList projects={top6Projects} />
