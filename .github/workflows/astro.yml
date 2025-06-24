@@ -78,7 +78,7 @@ jobs:
           path: ${{ env.BUILD_PATH }}/dist
 
   create-envfile:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - name: Create .env file
       uses: SpicyPizza/create-envfile@v2.0.3
