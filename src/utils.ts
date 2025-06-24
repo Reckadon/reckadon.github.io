@@ -28,6 +28,7 @@ export const kFormatter = (num: number) => {
 };
 
 export const getRepositoryDetails = async (repositoryFullname: string) => {
+	console.warn(PERSONAL_ACCESS_TOKEN)
 	const repoDetails = await fetch('https://api.github.com/repos/' + repositoryFullname, {
 		method: 'GET',
 		headers: {
