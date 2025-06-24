@@ -29,19 +29,14 @@ env:
   # BUILD_PATH: subfolder
 
 jobs:
-  create-envfile:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Create .env file
-      run:
-        touch .env
-        echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> .env
-
   build:
     name: Build
-    needs: create-envfile
     runs-on: ubuntu-latest
     steps:
+      - name: Create .env file
+        run:
+          touch .env
+          echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" >> .env
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
