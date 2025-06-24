@@ -1,6 +1,6 @@
 import { loadEnv } from 'vite';
 
-const { GITHUB_PERSONAL_ACCESS_TOKEN } = loadEnv(process.env.NODE_ENV || 'production', process.cwd(), '');
+const { PERSONAL_ACCESS_TOKEN } = loadEnv(process.env.NODE_ENV || 'production', process.cwd(), '');
 
 export const slugify = (input: string) => {
 	if (!input) return '';
@@ -31,7 +31,7 @@ export const getRepositoryDetails = async (repositoryFullname: string) => {
 	const repoDetails = await fetch('https://api.github.com/repos/' + repositoryFullname, {
 		method: 'GET',
 		headers: {
-			Authorization: `Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}`,
+			Authorization: `Bearer ${PERSONAL_ACCESS_TOKEN}`,
 			'X-GitHub-Api-Version': '2022-11-28'
 		}
 	});
