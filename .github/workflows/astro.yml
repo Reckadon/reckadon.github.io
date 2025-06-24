@@ -77,6 +77,16 @@ jobs:
         with:
           path: ${{ env.BUILD_PATH }}/dist
 
+  create-envfile:
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Create .env file
+      uses: SpicyPizza/create-envfile@v2.0.3
+      with:
+        envkey_DEBUG: false
+        envkey_PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        file_name: .env
+
   deploy:
     environment:
       name: github-pages
