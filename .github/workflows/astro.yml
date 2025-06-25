@@ -66,15 +66,10 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
-
+        
       - name: Create .env file
-        run:
-          touch .env
-          echo "PERSONAL_ACCESS_TOKEN=LMAO-DED" >> .env
-        working-directory: ${{ env.BUILD_PATH }}
-
-      - name: See files
-        run: ls -la
+        run: |
+          echo "PERSONAL_ACCESS_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}" > .env
         working-directory: ${{ env.BUILD_PATH }}
 
       - name: Build with Astro
