@@ -73,6 +73,10 @@ jobs:
           echo "PERSONAL_ACCESS_TOKEN=LMAO-DED" >> .env
         working-directory: ${{ env.BUILD_PATH }}
 
+      - name: See files
+        run: ls -la
+        working-directory: ${{ env.BUILD_PATH }}
+
       - name: Build with Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
