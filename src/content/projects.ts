@@ -12,11 +12,13 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		...(await getRepositoryDetails('Reckadon/Inter-IIT-Pathway-PathRAG-Court-Simulator')),
-		name: 'PathRAG Court Simulator',
+		...(await getRepositoryDetails('InterIIT-Sports')), // Since it's an org, repo details might be general
+		name: 'Live Scoreboard Website | InterIIT Sports Meet 2023',
 		description:
-			'A Multi Agent RAG Application built with LangGraph, CrewAI and Pathway. The App simulates the working of an Indian Legal Court.',
-		tags: ['AI', 'RAG', 'LangGraph']
+			'First open-source Inter-IIT sports website with real-time score updates, role-based access control, and admin dashboards used across all IITs.',
+		demoLink: 'https://github.com/orgs/InterIIT-Sports/repositories',
+		demoLinkRel: 'nofollow noopener noreferrer',
+		tags: ['ReactJS', 'MongoDB', 'socket.io']
 	},
 	{
 		...(await getRepositoryDetails('Reckadon/JPEG-Compression')),
@@ -27,21 +29,45 @@ export const projects: Project[] = [
 		tags: ['Course', 'Hardware', 'FPGA']
 	},
 	{
-		...(await getRepositoryDetails('InterIIT-Sports')), // Since it's an org, repo details might be general
-		name: 'Live Scoreboard Website | InterIIT Sports Meet 2023',
-		description:
-			'First open-source Inter-IIT sports website with real-time score updates, role-based access control, and admin dashboards used across all IITs.',
-		demoLink: 'https://github.com/orgs/InterIIT-Sports/repositories',
-		demoLinkRel: 'nofollow noopener noreferrer',
-		tags: ['ReactJS', 'MongoDB', 'socket.io']
-	},
-	{
 		...(await getRepositoryDetails('Blithchron/blith-website-25')),
 		name: 'Blithchron 2025 Official Website',
 		description: "The official website for IITGn's cultural fest, Blithchron '25. Showasing the fest's events, schedules, merch and more.",
 		demoLink: 'https://blithchron.iitgn.ac.in/',
 		demoLinkRel: 'nofollow noopener noreferrer',
 		tags: ['ReactJS', 'Framer', 'Astro']
+	},
+	{
+		...(await getRepositoryDetails('Reckadon/Inter-IIT-Pathway-PathRAG-Court-Simulator')),
+		name: 'PathRAG Court Simulator',
+		description:
+			'A Multi Agent RAG Application built with LangGraph, CrewAI and Pathway. The App simulates the working of an Indian Legal Court.',
+		tags: ['AI', 'RAG', 'LangGraph']
+	},
+	{
+		...(await getRepositoryDetails('Reckadon/ML-ImageReconstruction-RFF-MF')),
+		name: 'Image Super Resolution & Compression',
+		description:
+			'Image reconstruction pipeline using Random Fourier Features and matrix factorization for compression and upscaling with over 32 PSNR.',
+		demoLink: 'https://github.com/Reckadon/ML-ImageReconstruction-RFF-MF',
+		demoLinkRel: 'nofollow noopener noreferrer',
+		tags: ['Course', 'ML', 'Image Processing']
+	},
+	{
+		...(await getRepositoryDetails('Reckadon/MathTrainerGame')),
+		name: 'Math Trainer Game',
+		description: 'A Firebase-backed Native Android math game with difficulty levels, a live leaderboard, and a responsive UI.',
+		demoLink: 'https://github.com/Reckadon/MathTrainerGame/releases',
+		demoLinkRel: 'nofollow noopener noreferrer',
+		tags: ['Firebase', 'Android', 'Java']
+	},
+	{
+		...(await getRepositoryDetails('Reckadon/ML-HARwithDTs')),
+		name: 'Human Activity Recognition (HAR) Analysis',
+		description:
+			'Used TSFEL and Decision Trees on UCI HAR dataset for activity classification, also explored LLM-based zero/few-shot recognition techniques.',
+		demoLink: 'https://github.com/Reckadon/ML-HARwithDTs',
+		demoLinkRel: 'nofollow noopener noreferrer',
+		tags: ['Course', 'ML', 'Time Series']
 	},
 	{
 		...(await getRepositoryDetails('Reckadon/Hackrush24-Software-Dev-EGate')),
@@ -51,14 +77,6 @@ export const projects: Project[] = [
 		demoLink: 'https://github.com/Reckadon/Hackrush24-Software-Dev-EGate',
 		demoLinkRel: 'nofollow noopener noreferrer',
 		tags: ['ReactJS', 'Firebase', 'NodeJS']
-	},
-	{
-		...(await getRepositoryDetails('Reckadon/MathTrainerGame')),
-		name: 'Math Trainer Game',
-		description: 'A Firebase-backed Native Android math game with difficulty levels, a live leaderboard, and a responsive UI.',
-		demoLink: 'https://github.com/Reckadon/MathTrainerGame/releases',
-		demoLinkRel: 'nofollow noopener noreferrer',
-		tags: ['Firebase', 'Android', 'Java']
 	},
 	{
 		...(await getRepositoryDetails('Reckadon/HackRush-CollegeHub')),
@@ -78,13 +96,13 @@ export const projects: Project[] = [
 		tags: ['Course', 'ML', 'NLP']
 	},
 	{
-		...(await getRepositoryDetails('Reckadon/ML-ImageReconstruction-RFF-MF')),
-		name: 'Image Super Resolution & Compression',
+		...(await getRepositoryDetails('Reckadon/SortingIllustrator')),
+		name: 'Sorting Illustrator',
 		description:
-			'Image reconstruction pipeline using Random Fourier Features and matrix factorization for compression and upscaling with over 32 PSNR.',
-		demoLink: 'https://github.com/Reckadon/ML-ImageReconstruction-RFF-MF',
+			'A JavaFX desktop app to visualize sorting algorithms like Bubble Sort, Selection Sort, and Insertion Sort with control of size and speed.',
+		demoLink: 'https://github.com/Reckadon/SortingIllustrator/releases/tag/v1.5',
 		demoLinkRel: 'nofollow noopener noreferrer',
-		tags: ['Course', 'ML', 'Image Processing']
+		tags: ['JavaFX', 'Algorithms', 'Desktop']
 	},
 	{
 		...(await getRepositoryDetails('Reckadon/DevChat-ChatApplication-WhatTheHack24')),
@@ -96,15 +114,6 @@ export const projects: Project[] = [
 		tags: ['ReactJS', 'TypeScript', 'Firebase']
 	},
 	{
-		...(await getRepositoryDetails('Reckadon/ML-HARwithDTs')),
-		name: 'Human Activity Recognition (HAR) Analysis',
-		description:
-			'Used TSFEL and Decision Trees on UCI HAR dataset for activity classification, also explored LLM-based zero/few-shot recognition techniques.',
-		demoLink: 'https://github.com/Reckadon/ML-HARwithDTs',
-		demoLinkRel: 'nofollow noopener noreferrer',
-		tags: ['Course', 'ML', 'Time Series']
-	},
-	{
 		...(await getRepositoryDetails('Reckadon/DCC-Assignment-4-Flask')),
 		name: 'Electoral Bonds Analyzer',
 		description:
@@ -112,14 +121,5 @@ export const projects: Project[] = [
 		demoLink: 'https://github.com/Reckadon/DCC-Assignment-4-Flask',
 		demoLinkRel: 'nofollow noopener noreferrer',
 		tags: ['Course', 'Flask', 'Data Analysis']
-	},
-	{
-		...(await getRepositoryDetails('Reckadon/SortingIllustrator')),
-		name: 'Sorting Illustrator',
-		description:
-			'A JavaFX desktop app to visualize sorting algorithms like Bubble Sort, Selection Sort, and Insertion Sort with control of size and speed.',
-		demoLink: 'https://github.com/Reckadon/SortingIllustrator/releases/tag/v1.5',
-		demoLinkRel: 'nofollow noopener noreferrer',
-		tags: ['JavaFX', 'Algorithms', 'Desktop']
 	},
 ];
