@@ -21,3 +21,16 @@
 	--accent-color: #ff501b;
 	--accent-color-dark: #00ffff;
 }
+
+.katex-html{
+	display: none;
+}
+
+msqrt{
+	position: relative;
+    top: -4px;
+}
+msqrt > mi {
+	position: relative;
+    top: 4px;
+}
