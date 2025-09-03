@@ -69,7 +69,8 @@ The second round took place **10-15 minutes after everyone's first round was don
 
 #### DSA Problems
 
-1. From a list of numbers $arr$, **find the first number**, from $[1, 2, 3, \ldots, max(arr)]$ that **cannot** be made by **summing up any possible set of numbers** from the list $arr$. It was hard to understand the problem statement initially, but after some clarification and walkthrough, I was able to solve it. I initially approached it using __dynamic programming__, but the interviewer guided me to a more optimal **greedy approach**. The key insight was that if we can form all numbers from `1` to `x-1`, and the next number in the sorted array is `<= x`, then we can also form `x` by adding that number to some subset of previous numbers. If the next number is greater than `x`, then `x` is the smallest number that cannot be formed.
+1. From a list of numbers $arr$, **find the first number**, from $[1, 2, 3, \ldots, max(arr)]$ that **cannot** be made by **summing up any possible set of numbers** from the list $arr$. It was hard to understand the problem statement initially, but after some clarification and walkthrough, I was able to solve it.  
+I initially approached it using __dynamic programming__, but the interviewer guided me to a more optimal **greedy approach**. The key insight was that if we can form all numbers from `1` to `x-1`, and the next number in the sorted array is `<= x`, then we can also form `x` by adding that number to some subset of previous numbers. If the next number is greater than `x`, then `x` is the smallest number that cannot be formed.
 2. A **Graph based problem**, which I don't remember exactly, but it was quite simple to understand and solve.
 
 #### Project Discussion
