@@ -15,10 +15,10 @@ export const projects: Project[] = [
 		...(await getRepositoryDetails('Reckadon/Workout_Tracker')),
 		name: 'Workout Tracker',
 		description:
-			'Full-stack fitness tracking platform with Spring Boot, React, and a FastAPI analytics service, with workout logging, secure authentication, and progress insights.',
+			'Full-stack fitness tracking platform with Spring Boot, React, and a gRPC and Python based analytics service, with workout logging, secure authentication, and progress insights.',
 		demoLink: 'https://github.com/Reckadon/Workout_Tracker',
 		demoLinkRel: 'nofollow noopener noreferrer',
-		tags: ['Spring', 'FastAPI', 'PostgreSQL']
+		tags: ['Spring', 'gRPC', 'PostgreSQL']
 	},
 	{
 		...(await getRepositoryDetails('InterIIT-Sports')), // Since it's an org, repo details might be general
